@@ -1,12 +1,10 @@
-<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M20 35L50 15L80 35L80 55L50 85L20 55V35Z" fill="url(#paint0_linear)" />
-  <path d="M50 15L20 35L35 45L50 25L65 45L80 35L50 15Z" fill="#ffffff" fill-opacity="0.2" />
-  <path d="M50 85L35 65L50 45L65 65L50 85Z" fill="#ffffff" fill-opacity="0.1" />
-  <path d="M20 35L35 15M80 35L65 15" stroke="white" stroke-width="2" stroke-linecap="round"/>
-  <defs>
-    <linearGradient id="paint0_linear" x1="20" y1="15" x2="80" y2="85" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#F97316" />
-      <stop offset="1" stop-color="#EA580C" />
-    </linearGradient>
-  </defs>
+<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hauptform des Fuchses (Dunkelblau) -->
+  <path d="M4 10 L14 10 L22 28 L30 10 L40 10 L40 24 L32 32 L22 40 L12 32 L4 24 Z" fill="#1e3a5f" />
+
+  <!-- "Augen"/Schattierung (etwas dunkler für Tiefe) -->
+  <path d="M14 10 L22 24 L30 10 L22 18 Z" fill="#162c4a" />
+
+  <!-- Der markante orangefarbene Akzent (unten links) -->
+  <path d="M11 25 L21 25 L21 34 L12 33 Z" fill="#F97316" />
 </svg>
