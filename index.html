@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Fuchs IT-Solutions GmbH | Senior Lead Software Engineer & Cloud Architect
+    </title>
+    <meta
+      name="description"
+      content="Senior Lead Software Engineer mit über 30 Jahren Erfahrung in Microservices, Cloud-Architekturen (AWS) und Individualentwicklung."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+        function setLanguage(lang) {
+            document.body.className = 'lang-' + lang;
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('onclick').includes(lang));
+            });
+            localStorage.setItem('preferredLang', lang);
+        }
+        window.onload = () => {
+            const savedLang = localStorage.getItem('preferredLang') || 'de';
+            setLanguage(savedLang);
+        }
+    </script>
+  </head>
+  <body class="lang-de">
+    <header>
+      <div class="container">
+        <nav>
+                <a href="#" class="logo">
+                    <div class="logo-icon"></div>
+                    <span>Fuchs <span class="text-gradient">IT-Solutions GmbH</span></span>
+                </a>
+          <div class="nav-links" style="display: flex; align-items: center;">
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLanguage('de')">DE</button>
+                <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+            <a href="#expertise">
+                <span data-lang="de">Leistungen</span>
+                <span data-lang="en">Services</span>
+            </a>
+            <a href="#experience">
+                <span data-lang="de">Projekte</span>
+                <span data-lang="en">Projects</span>
+            </a>
+            <a href="#about">
+                <span data-lang="de">Über uns</span>
+                <span data-lang="en">About us</span>
+            </a>
+            <a
+              href="mailto:juergen.fuchs@fuchsitsolutions.com"
+              class="cta-button"
+              >Kontakt</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero animate-fade">
+        <div class="container">
+          <h1 data-lang="de">Fuchs IT-Solutions GmbH</h1>
+          <h1 data-lang="en">Fuchs IT-Solutions GmbH</h1>
+          
+          <h2 class="text-gradient">
+              <span data-lang="de">Exzellenz in Native Cloud Architecture & Custom Development</span>
+              <span data-lang="en">Excellence in Native Cloud Architecture & Custom Development</span>
+          </h2>
+          
+          <div data-lang="de">
+              <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem;">
+                  Ihr Partner für ganzheitliche Begleitung – von der strategischen Beratung und Planung bis hin zur Umsetzung und langfristigen Betreuung Ihrer digitalen Lösungen.
+              </p>
+              <div class="hero-features">
+                  <div class="hero-feature">
+                      <span class="feature-icon">☁</span>
+                      <span>Native Cloud IT-Lösungen (AWS, Google, Azure)</span>
+                  </div>
+                  <div class="hero-feature">
+                      <span class="feature-icon">⚙</span>
+                      <span>Maßgeschneiderte Individualentwicklung</span>
+                  </div>
+              </div>
+              <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 3rem;">
+                  <a href="#expertise" class="cta-button">Expertise</a>
+                  <a href="#experience" style="padding: 0.75rem 1.5rem; color: var(--text); text-decoration: none; border: 1px solid rgba(255,255,255,0.1); border-radius: 0.5rem;">Projekthistorie</a>
+              </div>
+          </div>
+
+          <div data-lang="en">
+              <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2rem;">
+                  Your partner for end-to-end support – from strategic consulting and planning to implementation and long-term care of your digital solutions.
+              </p>
+              <div class="hero-features">
+                  <div class="hero-feature">
+                      <span class="feature-icon">☁</span>
+                      <span>Native Cloud Solutions (AWS, Google, Azure)</span>
+                  </div>
+                  <div class="hero-feature">
+                      <span class="feature-icon">⚙</span>
+                      <span>Bespoke Custom Development</span>
+                  </div>
+              </div>
+              <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 3rem;">
+                  <a href="#expertise" class="cta-button">Expertise</a>
+                  <a href="#experience" style="padding: 0.75rem 1.5rem; color: var(--text); text-decoration: none; border: 1px solid rgba(255,255,255,0.1); border-radius: 0.5rem;">Project History</a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+        <!-- Expertise Section -->
+        <section id="expertise">
+            <div class="container">
+                <div data-lang="de">
+                    <p style="color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Lösungen für Ihr Unternehmen</p>
+                    <h2>Wie wir Ihrem Projekt zum Erfolg verhelfen</h2>
+                </div>
+                <div data-lang="en">
+                    <p style="color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Solutions for your Business</p>
+                    <h2>How I help your project succeed</h2>
+                </div>
+
+                <div class="expertise-grid">
+                    <div class="card">
+                        <h3>
+                            <span data-lang="de">Skalierbare Cloud-Systeme</span>
+                            <span data-lang="en">Scalable Cloud Systems</span>
+                        </h3>
+                        <p>
+                            <span data-lang="de">Ich baue Architekturen, die mit Ihrem Business wachsen. Von der ersten Idee bis zur globalen Skalierung in AWS oder Azure.</span>
+                            <span data-lang="en">I build architectures that grow with your business. From the initial idea to global scaling in AWS or Azure.</span>
+                        </p>
+                        <div class="badge-group">
+                            <span class="badge">Performance</span>
+                            <span class="badge">AWS</span>
+                            <span class="badge">Kubernetes</span>
+                            <span class="badge">Cloud-Native</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>
+                            <span data-lang="de">Modernisierung & Effizienz</span>
+                            <span data-lang="en">Modernization & Efficiency</span>
+                        </h3>
+                        <p>
+                            <span data-lang="de">Ich überführe Ihre Legacy-Systeme in die Moderne. Weniger Wartungsaufwand, höhere Geschwindigkeit und Nutzung von AI-gestützter Entwicklung.</span>
+                            <span data-lang="en">I transition your legacy systems into the modern era. Less maintenance, higher speed, and leverage of AI-driven development.</span>
+                        </p>
+                        <div class="badge-group">
+                            <span class="badge">Legacy-Migration</span>
+                            <span class="badge">AI-Coding</span>
+                            <span class="badge">Java Modernization</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>
+                            <span data-lang="de">Interim Tech-Lead</span>
+                            <span data-lang="en">Interim Tech-Lead</span>
+                        </h3>
+                        <p>
+                            <span data-lang="de">Als erfahrener Lead Engineer unterstütze ich Ihre Teams, leite Projekte und sichere die Codequalität durch Best Practices.</span>
+                            <span data-lang="en">As an experienced Lead Engineer, I support your teams, lead projects, and ensure code quality through best practices.</span>
+                        </p>
+                        <div class="badge-group">
+                            <span class="badge">Team Lead</span>
+                            <span class="badge">Architecture</span>
+                            <span class="badge">Code Quality</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Me / Value Section -->
+        <section style="background: linear-gradient(135deg, rgba(14, 165, 233, 0.05), rgba(99, 102, 241, 0.05));">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                    <div>
+                        <div data-lang="de">
+                            <p style="color: var(--secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Warum Fuchs IT-Solutions GmbH?</p>
+                            <h2>Ihre Vorteile bei einer Zusammenarbeit</h2>
+                        </div>
+                        <div data-lang="en">
+                            <p style="color: var(--secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Why Fuchs IT-Solutions GmbH?</p>
+                            <h2>Benefits of working together</h2>
+                        </div>
+
+                        <ul style="list-style: none; margin-top: 2rem;">
+                            <li style="margin-bottom: 1.5rem; display: flex; gap: 1rem;">
+                                <span style="background: var(--primary); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">✓</span>
+                                <div>
+                                    <span data-lang="de"><strong>30+ Jahre Praxiserfahrung:</strong> Keine Experimente auf Kosten Ihres Budgets, sondern bewährte Lösungen.</span>
+                                    <span data-lang="en"><strong>30+ Years Practical Experience:</strong> No experiments at the cost of your budget, but proven solutions.</span>
+                                </div>
+                            </li>
+                            <li style="margin-bottom: 1.5rem; display: flex; gap: 1rem;">
+                                <span style="background: var(--primary); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">✓</span>
+                                <div>
+                                    <span data-lang="de"><strong>One-Man GmbH Agilität:</strong> Kurze Entscheidungswege, ein fester Ansprechpartner und volles Commitment.</span>
+                                    <span data-lang="en"><strong>One-Man GmbH Agility:</strong> Short decision paths, one dedicated contact, and full commitment.</span>
+                                </div>
+                            </li>
+                            <li style="margin-bottom: 1.5rem; display: flex; gap: 1rem;">
+                                <span style="background: var(--primary); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">✓</span>
+                                <div>
+                                    <span data-lang="de"><strong>Modernster Tech-Stack:</strong> Java-Stabilität kombiniert mit AI-Tooling für maximale Produktivität.</span>
+                                    <span data-lang="en"><strong>Modern Tech-Stack:</strong> Java stability combined with AI tooling for maximum productivity.</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="mailto:juergen.fuchs@fuchsitsolutions.com" class="cta-button" style="display: inline-block; margin-top: 2rem;">
+                            <span data-lang="de">Unverbindliches Erstgespräch vereinbaren</span>
+                            <span data-lang="en">Schedule a free initial consultation</span>
+                        </a>
+                    </div>
+                    <div>
+                        <div style="background: var(--bg-card); padding: 3rem; border-radius: 2rem; border: 1px solid rgba(14,165,233,0.1); position: relative;">
+                            <div style="font-size: 3rem; color: var(--primary); position: absolute; top: 1rem; left: 2rem; opacity: 0.2;">&ldquo;</div>
+                            <p style="font-style: italic; font-size: 1.25rem; position: relative; z-index: 1;">
+                                <span data-lang="de">Mein Ziel ist es nicht nur Code zu schreiben, sondern nachhaltige Werte für Ihr Unternehmen zu schaffen.</span>
+                                <span data-lang="en">My goal is not just to write code, but to create sustainable value for your company.</span>
+                            </p>
+                            <div style="margin-top: 2rem; display: flex; align-items: center; gap: 1rem;">
+                                <div style="font-weight: 700;">Jürgen Fuchs</div>
+                                <div style="color: var(--text-muted); font-size: 0.875rem;">
+                                    <span data-lang="de">Geschäftsführer, Fuchs IT-Solutions GmbH</span>
+                                    <span data-lang="en">Managing Director, Fuchs IT-Solutions GmbH</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      <!-- Experience Section -->
+      <section id="experience" style="background: rgba(255, 255, 255, 0.02)">
+        <div class="container">
+          <h2>
+              <span data-lang="de">Erfolgsgeschichten & Projekterfahrung</span>
+              <span data-lang="en">Success Stories & Project Experience</span>
+          </h2>
+          <div style="margin-top: 3rem">
+            <div
+              style="
+                border-left: 2px solid var(--primary);
+                padding-left: 2rem;
+                margin-bottom: 4rem;
+              "
+            >
+              <h3 style="color: var(--primary)">
+                  <span data-lang="de">Internationales Telekommunikations-Projekt</span>
+                  <span data-lang="en">International Telecommunications Project</span>
+              </h3>
+              <p style="font-weight: 500; margin-bottom: 0.5rem">
+                Senior Lead Developer / Architect • 2023 - 2025
+              </p>
+              <p style="color: var(--text-muted)">
+                  <span data-lang="de">Verantwortlich für den Microservice Tech-Stack im Bereich Product Order Tracking. Implementierung einer hochskalierbaren Architektur basierend auf Spring Boot, Kubernetes und Camunda.</span>
+                  <span data-lang="en">Responsible for the microservice tech stack for Product Order Tracking. Implementation of a highly scalable architecture based on Spring Boot, Kubernetes, and Camunda.</span>
+              </p>
+            </div>
+            <div
+              style="
+                border-left: 2px solid var(--secondary);
+                padding-left: 2rem;
+                margin-bottom: 4rem;
+              "
+            >
+              <h3 style="color: var(--secondary)">
+                  <span data-lang="de">E-Commerce & Payment Solutions (Logistik)</span>
+                  <span data-lang="en">E-Commerce & Payment Solutions (Logistics)</span>
+              </h3>
+              <p style="font-weight: 500; margin-bottom: 0.5rem">
+                Lead Software Engineer • 2018 - 2021
+              </p>
+              <p style="color: var(--text-muted)">
+                  <span data-lang="de">Architektur und Entwicklung zentraler Bezahlsysteme für Geschäftskunden. Fokus auf Hochverfügbarkeit und Sicherheit unter Nutzung von Java EE und modernen Web-Technologien.</span>
+                  <span data-lang="en">Architecture and development of central payment systems for business customers. Focused on high availability and security using Java EE and modern web technologies.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About / Profile Section -->
+      <section id="about">
+        <div class="container">
+          <div class="about-grid">
+            <div class="profile-container">
+              <div class="profile-image">
+                <img src="images/portrait.jpg" alt="Jürgen Fuchs">
+              </div>
+              <div class="profile-info">
+                <h3>Jürgen Fuchs</h3>
+                <p class="text-gradient" style="font-weight: 600; margin-bottom: 0.5rem;">Senior Software Architect</p>
+                <div class="social-links">
+                  <a href="https://www.linkedin.com/in/jfuchs2" target="_blank" class="social-pill">
+                    <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bio-content">
+              <div data-lang="de">
+                <p style="color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Über mich</p>
+                <h2 style="margin-bottom: 2rem;">Senior Software Architect & Lead Developer | 25 Jahre Enterprise-Expertise</h2>
+                
+                <div class="highlight-box">
+                  Mit über zwei Jahrzehnten Erfahrung in der Architekturleitung komplexer Großprojekte (u.a. bei NTT DATA für Telekom, Post, E-Plus) bringe ich tiefes technologisches Verständnis in moderne Software-Ökosysteme ein.
+                </div>
+
+                <p>
+                  Mein Fokus liegt auf der Verbindung von bewährtem Enterprise-Wissen mit zukunftsorientierten Ansätzen. Aktuell vertiefe ich meine Expertise in AI-assisted Development (GitHub Copilot GH-300), um Software-Lebenszyklen nicht nur stabiler, sondern spürbar effizienter zu gestalten.
+                </p>
+
+                <h3>Expertise & Kernkompetenzen</h3>
+                <ul class="skill-list" style="list-style: none; margin-bottom: 2rem;">
+                  <li class="skill-item">Java 17/21, Spring Boot 3, Spring Cloud</li>
+                  <li class="skill-item">Kubernetes & Cloud-Native Architektur</li>
+                  <li class="skill-item">Camunda (7/8) BPMN Workflow Automation</li>
+                  <li class="skill-item">TMForum-Standards & Microservice-Landschaften</li>
+                  <li class="skill-item">Globale Leadership-Erfahrung (Offshore/Vietnam)</li>
+                  <li class="skill-item">Skalierte Agilität (SAFe) & Scrum Professionalism</li>
+                </ul>
+
+                <h3>Vision & Engagement</h3>
+                <p>
+                  Verwurzelt in Euratsfeld (NÖ), arbeite ich vorwiegend in Remote-First-Setups mit Fokus auf Flexibilität und Effizienz. Mein Ziel ist es, als erfahrener Mentor und Principal Engineer Teams zu befähigen, technische Exzellenz mit nachhaltigen Geschäftslösungen zu vereinen.
+                </p>
+
+                <p style="margin-top: 2rem;">
+                  Wenn Sie eine "ruhige Hand" für Ihre Architektur und einen Impulsgeber für moderne Engineering-Kultur suchen, freue ich mich auf den Austausch.
+                </p>
+              </div>
+
+              <div data-lang="en">
+                <p style="color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">About Me</p>
+                <h2 style="margin-bottom: 2rem;">Senior Software Architect & Lead Developer | 25 Years Enterprise Expertise</h2>
+                
+                <div class="highlight-box">
+                  With more than two decades of experience leading architecture for complex large-scale projects (including NTT DATA for Telekom, Post, E-Plus), I bring deep technical maturity to modern software ecosystems.
+                </div>
+
+                <p>
+                  My focus is on bridging proven enterprise knowledge with future-looking approaches. Currently, I am deepening my expertise in AI-assisted Development (GitHub Copilot GH-300) to make software lifecycles not only more stable but significantly more efficient.
+                </p>
+
+                <h3>Core Expertise</h3>
+                <ul class="skill-list" style="list-style: none; margin-bottom: 2rem;">
+                  <li class="skill-item">Java 17/21, Spring Boot 3, Spring Cloud</li>
+                  <li class="skill-item">Kubernetes & Cloud-Native Architecture</li>
+                  <li class="skill-item">Camunda (7/8) BPMN Workflow Automation</li>
+                  <li class="skill-item">TMForum Standards & Microservice Landscapes</li>
+                  <li class="skill-item">Global Leadership Experience (Offshore/Vietnam)</li>
+                  <li class="skill-item">Scaled Agility (SAFe) & Scrum Professionalism</li>
+                </ul>
+
+                <h3>Vision & Collaboration</h3>
+                <p>
+                  Based in Euratsfeld (Lower Austria), I operate primarily in Remote-First environments, focusing on flexibility and impact. My mission is to empower teams as an experienced mentor and Principal Engineer, uniting technical excellence with sustainable business value.
+                </p>
+
+                <p style="margin-top: 2rem;">
+                  If you are looking for a "steady hand" for your architecture and a driver for modern engineering culture, I look forward to our exchange.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2026 Fuchs IT-Solutions GmbH. All Rights Reserved.</p>
+        <div
+          style="
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+          "
+        >
+          <a
+            href="impressum.html"
+            style="color: var(--text-muted); text-decoration: none"
+            >Impressum / Legal Notice</a
+          >
+          <a
+            href="datenschutz.html"
+            style="color: var(--text-muted); text-decoration: none"
+            >Datenschutz / Privacy</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
