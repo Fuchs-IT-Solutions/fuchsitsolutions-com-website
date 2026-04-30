@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "npm run optimize:images && vite build",
+    "preview": "vite preview",
+    "optimize:images": "bash optimize-images.sh"
   },
   "devDependencies": {
     "vite": "^5.0.0"
