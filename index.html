@@ -30,6 +30,23 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <!-- Google Analytics 4 (Update with your GA4 ID: G-XXXXXXXXXX) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+
+      // Track contact form submissions
+      function trackFormSubmission() {
+        gtag('event', 'contact_form_submit', {
+          'event_category': 'engagement',
+          'event_label': 'contact_form'
+        });
+      }
+    </script>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -67,9 +84,21 @@
         function setLanguage(lang) {
             document.body.className = 'lang-' + lang;
             document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.getAttribute('onclick').includes(lang));
+                const isActive = btn.getAttribute('onclick').includes(lang);
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-pressed', isActive);
             });
             localStorage.setItem('preferredLang', lang);
+            // Announce language change to screen readers
+            const langName = lang === 'de' ? 'Deutsch' : 'English';
+            const announcement = document.createElement('div');
+            announcement.setAttribute('role', 'status');
+            announcement.setAttribute('aria-live', 'polite');
+            announcement.textContent = `Language changed to ${langName}`;
+            announcement.style.position = 'absolute';
+            announcement.style.left = '-10000px';
+            document.body.appendChild(announcement);
+            setTimeout(() => announcement.remove(), 1000);
         }
         function toggleModal(show) {
             const overlay = document.getElementById('contactModal');
@@ -97,6 +126,9 @@
     </script>
   </head>
   <body class="lang-de">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header>
       <div class="container">
         <nav>
@@ -105,9 +137,9 @@
                     <span>Fuchs <span class="text-gradient">IT-Solutions</span></span>
                 </a>
           <div class="nav-links" style="display: flex; align-items: center;">
-            <div class="lang-switch">
-                <button class="lang-btn active" onclick="setLanguage('de')">DE</button>
-                <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+            <div class="lang-switch" role="group" aria-label="Language selection">
+                <button class="lang-btn active" onclick="setLanguage('de')" aria-label="Deutsch" aria-pressed="true">DE</button>
+                <button class="lang-btn" onclick="setLanguage('en')" aria-label="English" aria-pressed="false">EN</button>
             </div>
             <a href="#expertise">
                 <span data-lang="de">Leistungen</span>
@@ -132,7 +164,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <!-- Hero Section -->
       <section class="hero animate-fade">
         <div class="container">
@@ -205,8 +237,8 @@
                             <span data-lang="en">Scalable Cloud Systems</span>
                         </h3>
                         <p>
-                            <span data-lang="de">Ich baue Architekturen, die mit Ihrem Business wachsen. Von der ersten Idee bis zur globalen Skalierung in AWS oder Azure.</span>
-                            <span data-lang="en">I build architectures that grow with your business. From the initial idea to global scaling in AWS or Azure.</span>
+                            <span data-lang="de">Architekturen, die mit Ihrem Business wachsen. Von der ersten Idee bis zur globalen Skalierung in AWS, Google Cloud oder Azure – mit bewährten Enterprise-Patterns.</span>
+                            <span data-lang="en">Architectures that grow with your business. From initial concepts to global scaling in AWS, Google Cloud, or Azure – using proven enterprise patterns.</span>
                         </p>
                         <div class="badge-group">
                             <span class="badge">Performance</span>
@@ -221,8 +253,8 @@
                             <span data-lang="en">Modernization & Efficiency</span>
                         </h3>
                         <p>
-                            <span data-lang="de">Ich überführe Ihre Legacy-Systeme in die Moderne. Weniger Wartungsaufwand, höhere Geschwindigkeit und Nutzung von AI-gestützter Entwicklung.</span>
-                            <span data-lang="en">I transition your legacy systems into the modern era. Less maintenance, higher speed, and leverage of AI-driven development.</span>
+                            <span data-lang="de">Legacy-Systeme strategisch in die Moderne transformieren. Weniger Komplexität, höhere Velocity und moderne Tech-Stacks mit AI-gestützter Entwicklung für maximale Produktivität.</span>
+                            <span data-lang="en">Strategically transform legacy systems into modern architectures. Reduced complexity, increased velocity, and modern tech stacks with AI-driven development for maximum productivity.</span>
                         </p>
                         <div class="badge-group">
                             <span class="badge">Legacy-Migration</span>
@@ -232,17 +264,17 @@
                     </div>
                     <div class="card">
                         <h3>
-                            <span data-lang="de">Interim Tech-Lead</span>
-                            <span data-lang="en">Interim Tech-Lead</span>
+                            <span data-lang="de">Architektur & Team Leadership</span>
+                            <span data-lang="en">Architecture & Team Leadership</span>
                         </h3>
                         <p>
-                            <span data-lang="de">Als erfahrener Lead Engineer unterstütze ich Ihre Teams, leite Projekte und sichere die Codequalität durch Best Practices.</span>
-                            <span data-lang="en">As an experienced Lead Engineer, I support your teams, lead projects, and ensure code quality through best practices.</span>
+                            <span data-lang="de">Als erfahrener Lead Engineer und Architect unterstütze ich Ihre Teams nachhaltig, leite strategische Projekte und sichere technische Exzellenz durch Best Practices und mentoring.</span>
+                            <span data-lang="en">As an experienced Lead Engineer and Architect, I sustainably support your teams, guide strategic initiatives, and ensure technical excellence through best practices and mentoring.</span>
                         </p>
                         <div class="badge-group">
-                            <span class="badge">Team Lead</span>
-                            <span class="badge">Architecture</span>
-                            <span class="badge">Code Quality</span>
+                            <span class="badge">Principal Engineer</span>
+                            <span class="badge">Tech Architecture</span>
+                            <span class="badge">Team Mentoring</span>
                         </div>
                     </div>
                 </div>
@@ -377,6 +409,18 @@
                   <span data-lang="de">Entwicklung und Wartung eines unternehmenskritischen CRM-Großsystems. Fokus auf Performance-Optimierung, Integration verteilter Systeme und Behebung komplexer Produktionsprobleme.</span>
                   <span data-lang="en">Development and maintenance of a mission-critical large-scale CRM system. Focus on performance optimization, integration of distributed systems, and resolution of complex production issues.</span>
               </p>
+            </div>
+
+            <!-- CTA Section after Experience -->
+            <div style="text-align: center; margin-top: 4rem; padding-top: 3rem; border-top: 1px solid rgba(255,255,255,0.1);">
+              <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                <span data-lang="de">Ähnliche Herausforderungen in Ihrem Unternehmen?</span>
+                <span data-lang="en">Facing similar challenges in your organization?</span>
+              </p>
+              <a href="javascript:void(0)" class="cta-button" onclick="toggleModal(true)" style="display: inline-block;">
+                <span data-lang="de">Lassen Sie uns darüber sprechen</span>
+                <span data-lang="en">Let's discuss your needs</span>
+              </a>
             </div>
           </div>
         </div>
@@ -527,7 +571,7 @@
 
                 <div class="modal-contacts">
                     <!-- Contact Form -->
-                    <form id="contactForm" action="https://formspree.io/f/mnqezgbx" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <form id="contactForm" action="https://formspree.io/f/mnqezgbx" method="POST" onsubmit="trackFormSubmission()" style="display: flex; flex-direction: column; gap: 1.5rem;">
                         <div>
                             <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">
                                 <span data-lang="de">Name</span>
