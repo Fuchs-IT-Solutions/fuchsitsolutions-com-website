@@ -53,6 +53,9 @@
         const form = event.target;
         const formData = new FormData(form);
 
+        // Add _next parameter to prevent Formspree redirect
+        formData.append('_next', window.location.href);
+
         try {
           const response = await fetch(form.action, {
             method: 'POST',
