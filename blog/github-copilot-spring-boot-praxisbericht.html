@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Copilot in Spring Boot – Praxisbericht | Fuchs IT-Solutions</title>
+    <meta name="description" content="Ehrlicher Praxisbericht: GitHub Copilot im Einsatz in einem Enterprise Spring Boot Projekt. Was wirklich Zeit spart, wo KI-Assistenz in die Irre führt, und welche Workflows ich empfehle." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.fuchsitsolutions.com/blog/github-copilot-spring-boot-praxisbericht.html" />
+    <meta property="og:title" content="GitHub Copilot in Spring Boot – Praxisbericht" />
+    <meta property="og:description" content="Ehrlicher Praxisbericht: GitHub Copilot im Enterprise-Java-Einsatz. Was funktioniert, was nicht — und welche Workflows ich für Teams empfehle." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.fuchsitsolutions.com/blog/github-copilot-spring-boot-praxisbericht.html" />
+    <meta property="article:published_time" content="2026-06-11" />
+    <meta property="article:author" content="Jürgen Fuchs" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      .article-body {
+        max-width: 720px;
+        margin: 0 auto;
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: var(--text);
+      }
+      .article-body h2 {
+        font-size: 1.4rem;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        color: var(--text);
+      }
+      .article-body h3 {
+        font-size: 1.1rem;
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+        color: var(--primary);
+      }
+      .article-body p {
+        margin-bottom: 1.25rem;
+      }
+      .article-body ul {
+        margin: 0 0 1.25rem 1.5rem;
+      }
+      .article-body li {
+        margin-bottom: 0.5rem;
+      }
+      .article-body .highlight-box {
+        margin: 2rem 0;
+      }
+      .article-body strong {
+        color: var(--text);
+      }
+      .article-divider {
+        border: none;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        margin: 3rem 0;
+      }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "GitHub Copilot in einem Spring Boot Projekt — was wirklich funktioniert (und was nicht)",
+      "datePublished": "2026-06-11",
+      "author": {
+        "@type": "Person",
+        "name": "Jürgen Fuchs",
+        "url": "https://www.fuchsitsolutions.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fuchs IT-Solutions GmbH",
+        "url": "https://www.fuchsitsolutions.com"
+      },
+      "url": "https://www.fuchsitsolutions.com/blog/github-copilot-spring-boot-praxisbericht.html",
+      "description": "Ehrlicher Praxisbericht: GitHub Copilot im Einsatz in einem Enterprise Spring Boot Projekt."
+    }
+    </script>
+  </head>
+  <body class="lang-de">
+    <header>
+      <div class="container">
+        <nav>
+          <a href="/" class="logo">
+            <div class="logo-icon"></div>
+            <span>Fuchs <span class="text-gradient">IT-Solutions</span></span>
+          </a>
+          <div class="nav-links" style="display: flex; align-items: center;">
+            <a href="/#ai">KI & Architektur</a>
+            <a href="/#expertise">Leistungen</a>
+            <a href="/#experience">Projekte</a>
+            <a href="/#about">Über uns</a>
+            <a href="/blog/" style="color: var(--primary);">Blog</a>
+            <a href="/" class="cta-button">Kontakt</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section style="padding-top: 6rem; padding-bottom: 2rem;">
+        <div class="container">
+          <div style="max-width: 720px; margin: 0 auto;">
+            <a href="/blog/" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">← Zurück zum Blog</a>
+
+            <div style="margin-top: 2rem; margin-bottom: 0.75rem;">
+              <div class="badge-group">
+                <span class="badge">GitHub Copilot</span>
+                <span class="badge">Spring Boot</span>
+                <span class="badge">AI-Entwicklung</span>
+              </div>
+            </div>
+
+            <h1 style="font-size: 2rem; line-height: 1.3; margin-bottom: 1.5rem;">
+              GitHub Copilot in einem Spring Boot Projekt — was wirklich funktioniert (und was nicht)
+            </h1>
+
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.08);">
+              <picture>
+                <source srcset="/images/portrait.webp" type="image/webp">
+                <img src="/images/portrait.jpg" alt="Jürgen Fuchs" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
+              </picture>
+              <div>
+                <div style="font-weight: 600;">Jürgen Fuchs</div>
+                <div style="color: var(--text-muted); font-size: 0.875rem;">11. Juni 2026 · 6 Min Lesezeit</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="padding-top: 0;">
+        <div class="container">
+          <div class="article-body">
+
+            <div class="highlight-box">
+              Ich nutze GitHub Copilot seit über einem Jahr täglich in Enterprise-Java-Projekten — zuletzt im Product Order Tracking Projekt bei der Deutschen Telekom. Dieser Artikel ist kein Marketing-Beitrag. Ich schreibe auf, was wirklich passiert, wenn man ein KI-Coding-Tool in eine gewachsene Microservice-Landschaft mit Spring Boot, Kubernetes und Camunda einführt.
+            </div>
+
+            <h2>Der Kontext: kein Greenfield-Projekt</h2>
+            <p>
+              Die meisten Copilot-Erfahrungsberichte stammen aus Greenfield-Projekten oder Solo-Entwicklern, die eine neue App bauen. Enterprise-Realität sieht anders aus: bestehende Codebasis mit jahrelanger Geschichte, Offshore-Team in verschiedenen Zeitzonen, strenge Code-Review-Prozesse, TMForum-API-Standards die eingehalten werden müssen.
+            </p>
+            <p>
+              Genau in diesem Umfeld habe ich Copilot eingesetzt — und die Ergebnisse waren differenzierter als erwartet.
+            </p>
+
+            <h2>Wo Copilot echte Zeit spart</h2>
+
+            <h3>1. Boilerplate-Code bei REST-Endpunkten</h3>
+            <p>
+              Spring Boot REST-Controller folgen immer demselben Muster: Annotation, Dependency Injection, Methode, Exception Handling, Response-Wrapping. Copilot erkennt dieses Muster nach wenigen Beispielen zuverlässig und vervollständigt neue Endpunkte zu 80–90% korrekt. Was früher 10 Minuten dauerte, dauert jetzt 2.
+            </p>
+
+            <h3>2. Unit-Tests für einfache Service-Methoden</h3>
+            <p>
+              Test-Skelette für einfache Service-Klassen generiert Copilot sehr gut. Arrange-Act-Assert Struktur, Mockito-Setup, typische Happy-Path-Tests — das funktioniert zuverlässig. Bei komplexen Integrationstests mit mehreren Abhängigkeiten wird es schlechter, aber der Ausgangspunkt ist trotzdem nützlich.
+            </p>
+
+            <h3>3. Regex, SQL-Queries, Mapping-Logik</h3>
+            <p>
+              Aufgaben, die präzise und repetitiv sind, erledigt Copilot ausgezeichnet. Eine MapStruct-Mapping-Definition, eine JPA-Query-Annotation, ein Regex für eine Validierung — hier ist der Vorschlag meistens direkt verwendbar.
+            </p>
+
+            <h2>Wo Copilot in die Irre führt</h2>
+
+            <h3>1. Domain-spezifische Logik</h3>
+            <p>
+              Copilot kennt Spring Boot — aber er kennt nicht dein Domänenmodell. Bei komplexer Geschäftslogik (z.B. TMForum Product Order State Machine) schlägt er plausibelklingende, aber fachlich falsche Implementierungen vor. Das Gefährliche: der Code sieht gut aus. Ein Junior-Entwickler der den Review überfliegt, übersieht den Fehler leicht.
+            </p>
+
+            <h3>2. Sicherheitsrelevanter Code</h3>
+            <p>
+              Bei Authentifizierung, Autorisierung, Datenverschlüsselung oder DSGVO-relevanten Datenflüssen würde ich Copilot-Vorschläge niemals ohne gründliche Prüfung übernehmen. Das Modell optimiert für "kompiliert und läuft", nicht für "sicher und compliant". Hier ist menschliche Expertise unverzichtbar.
+            </p>
+
+            <h3>3. Architekturentscheidungen</h3>
+            <p>
+              Copilot schlägt vor, wie man etwas implementiert — nie warum man es anders implementieren sollte. Die Frage "Soll das ein eigener Microservice werden oder bleibt das im bestehenden Service?" beantwortet kein KI-Tool. Das ist Architekturarbeit, und die bleibt menschlich.
+            </p>
+
+            <hr class="article-divider" />
+
+            <h2>Mein Workflow-Empfehlung für Spring Boot Teams</h2>
+
+            <p>Nach einem Jahr Praxis habe ich einen Workflow entwickelt, der das Beste aus beiden Welten holt:</p>
+
+            <ul>
+              <li><strong>Copilot aktiviert, aber nicht blind vertraut:</strong> Jeden Vorschlag kurz lesen, nicht einfach Tab drücken. Das klingt selbstverständlich, aber im Flow-Zustand passiert es schnell.</li>
+              <li><strong>Für Boilerplate freie Hand:</strong> REST-Controller, DTOs, Mapper, einfache Tests — hier einfach annehmen und weiterarbeiten.</li>
+              <li><strong>Bei Domänenlogik: Copilot als Startpunkt, nicht als Ergebnis:</strong> Den Vorschlag als Strukturhilfe nehmen, die eigentliche Logik selbst schreiben.</li>
+              <li><strong>Sicherheitsrelevanter Code: Copilot deaktivieren:</strong> Ich schalte die Inline-Vorschläge bei Auth-Code bewusst ab — die Ablenkung kostet mehr als sie bringt.</li>
+              <li><strong>Code-Review-Prozess anpassen:</strong> Das Team muss wissen, dass Copilot-generierter Code im Review keine Behandlung als "schon geprüft" verdient. Explizit ansprechen.</li>
+            </ul>
+
+            <h2>Fazit</h2>
+            <p>
+              GitHub Copilot ist kein Entwickler-Ersatz — er ist ein sehr guter Autocomplete-Assistent, der ein tiefes Kontextverständnis mitbringt. In einem erfahrenen Enterprise-Team erhöht er die Produktivität messbar, etwa 20–30% bei gut eingespieltem Workflow. In einem unerfahrenen Team kann er Schaden anrichten, weil er selbstsicher klingende, aber falsche Lösungen vorschlägt.
+            </p>
+            <p>
+              Die entscheidende Frage ist nicht "Copilot ja oder nein?" sondern "Wie integrieren wir KI-Assistenz so in unseren Prozess, dass wir den Nutzen heben ohne die Risiken zu ignorieren?" — Das ist eine Architektur- und Prozessfrage, keine Tool-Frage.
+            </p>
+
+            <div class="highlight-box" style="margin-top: 3rem;">
+              <strong>Sie überlegen, KI-Tools in Ihr Entwicklungsteam einzuführen?</strong> Ich helfe bei der Auswahl, dem Setup und der Governance — praxisnah, ohne Buzzwords.
+              <br><br>
+              <a href="/" class="cta-button" style="display: inline-block;">Unverbindlich anfragen</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2026 Fuchs IT-Solutions GmbH. All Rights Reserved.</p>
+        <div style="margin-top: 1rem; display: flex; gap: 1rem; justify-content: center;">
+          <a href="/impressum.html" style="color: var(--text-muted); text-decoration: none;">Impressum / Legal Notice</a>
+          <a href="/datenschutz.html" style="color: var(--text-muted); text-decoration: none;">Datenschutz / Privacy</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Fuchs IT-Solutions – AI, Cloud & Software-Architektur</title>
+    <meta name="description" content="Praxisberichte und Einblicke zu AI-gestützter Softwareentwicklung, Cloud-Architektur und modernen Entwicklungsprozessen – von Jürgen Fuchs, Senior Software Architect aus dem Raum Amstetten." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.fuchsitsolutions.com/blog/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body class="lang-de">
+    <header>
+      <div class="container">
+        <nav>
+          <a href="/" class="logo">
+            <div class="logo-icon"></div>
+            <span>Fuchs <span class="text-gradient">IT-Solutions</span></span>
+          </a>
+          <div class="nav-links" style="display: flex; align-items: center;">
+            <a href="/#ai">KI & Architektur</a>
+            <a href="/#expertise">Leistungen</a>
+            <a href="/#experience">Projekte</a>
+            <a href="/#about">Über uns</a>
+            <a href="/blog/" style="color: var(--primary);">Blog</a>
+            <a href="/" class="cta-button" onclick="sessionStorage.setItem('openModal','1')">Kontakt</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section style="padding-top: 6rem;">
+        <div class="container">
+          <p style="color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Praxiswissen aus echten Projekten</p>
+          <h1 style="margin-bottom: 1rem;">Blog</h1>
+          <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin-bottom: 4rem;">
+            Einblicke zu AI-gestützter Entwicklung, Cloud-Architektur und modernen Software-Prozessen — aus 25+ Jahren Enterprise-Praxis.
+          </p>
+
+          <div style="display: grid; gap: 2rem; max-width: 800px;">
+
+            <!-- Artikel 1 -->
+            <article style="background: var(--bg-card); border: 1px solid rgba(14,165,233,0.15); border-radius: 1rem; padding: 2rem; transition: border-color 0.2s;" onmouseover="this.style.borderColor='rgba(14,165,233,0.4)'" onmouseout="this.style.borderColor='rgba(14,165,233,0.15)'">
+              <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.75rem;">11. Juni 2026 · 6 Min Lesezeit</p>
+              <h2 style="font-size: 1.4rem; margin-bottom: 0.75rem;">
+                <a href="/blog/github-copilot-spring-boot-praxisbericht.html" style="color: var(--text); text-decoration: none;">
+                  GitHub Copilot in einem Spring Boot Projekt — was wirklich funktioniert (und was nicht)
+                </a>
+              </h2>
+              <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                Ich nutze GitHub Copilot seit über einem Jahr täglich in Enterprise-Java-Projekten. Hier ist mein ehrlicher Praxisbericht: wo KI-Assistenz echte Zeit spart, wo sie in die Irre führt — und welche Workflows ich für Spring Boot Teams empfehle.
+              </p>
+              <div class="badge-group" style="margin-bottom: 1.5rem;">
+                <span class="badge">GitHub Copilot</span>
+                <span class="badge">Spring Boot</span>
+                <span class="badge">AI-Entwicklung</span>
+              </div>
+              <a href="/blog/github-copilot-spring-boot-praxisbericht.html" style="color: var(--primary); font-weight: 600; text-decoration: none;">Artikel lesen →</a>
+            </article>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2026 Fuchs IT-Solutions GmbH. All Rights Reserved.</p>
+        <div style="margin-top: 1rem; display: flex; gap: 1rem; justify-content: center;">
+          <a href="/impressum.html" style="color: var(--text-muted); text-decoration: none;">Impressum / Legal Notice</a>
+          <a href="/datenschutz.html" style="color: var(--text-muted); text-decoration: none;">Datenschutz / Privacy</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
