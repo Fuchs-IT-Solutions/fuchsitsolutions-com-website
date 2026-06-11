@@ -313,6 +313,21 @@ body.lang-en [data-lang="en"] {
   display: block;
 }
 
+a [data-lang],
+button [data-lang] {
+  display: none;
+}
+
+body.lang-de a [data-lang="de"],
+body.lang-de button [data-lang="de"] {
+  display: inline;
+}
+
+body.lang-en a [data-lang="en"],
+body.lang-en button [data-lang="en"] {
+  display: inline;
+}
+
 /* About Section / Profile */
 .about-grid {
     display: grid;
