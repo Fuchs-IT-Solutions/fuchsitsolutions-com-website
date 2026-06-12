@@ -76,7 +76,7 @@ h1 {
 h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--text);
 }
 h3 {
   font-size: 1.5rem;
@@ -93,6 +93,12 @@ h3 {
 /* Layout Sections */
 section {
   padding: 8rem 0;
+}
+
+section:nth-child(even) {
+  clip-path: polygon(0 2rem, 100% 0, 100% calc(100% - 2rem), 0 100%);
+  padding: 10rem 0;
+  margin: -2rem 0;
 }
 
 .hero {
@@ -151,6 +157,7 @@ section {
   padding: 2.5rem;
   border-radius: 1.25rem;
   border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--primary);
   transition:
     transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
     border-color 0.4s ease,
@@ -158,9 +165,8 @@ section {
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(38, 198, 218, 0.4);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(38, 198, 218, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(38, 198, 218, 0.08);
 }
 
 .badge-group {
@@ -171,13 +177,14 @@ section {
 }
 
 .badge {
-  background: rgba(14, 165, 233, 0.1);
+  background: rgba(38, 198, 218, 0.12);
   color: var(--primary);
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  border: 1px solid rgba(14, 165, 233, 0.2);
+  padding: 0.3rem 0.85rem;
+  border-radius: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border: none;
 }
 
 /* Header */
@@ -243,16 +250,20 @@ nav {
 
 .cta-button {
   background: var(--primary);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  color: #0f172a;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
   text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  display: inline-block;
 }
 
 .cta-button:hover {
   background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(38, 198, 218, 0.35);
 }
 
 footer {
